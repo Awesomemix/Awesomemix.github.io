@@ -1,13 +1,24 @@
-title	date	categories
-Welcome to Jekyll!
-2017-10-20 08:26:28 -0400
-jekyll update
-You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+---
+title: "안드로이드 HandlerThread 스레드"
+date: 2017-10-20 08:26:28 -0400
+categories: jekyll update
+---
 
-To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.ext and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+HandlerThread 는 UI와 관련없지만 단일스레드에서 순차적인 작업이 필요할 때 사용한다.
+(ex. 상태가 바뀔 때 마다 스레드를 생성해서 DB에 반영할 경우, 해당 작업의 순서가 중요)
 
-Jekyll also offers powerful support for code snippets:
+Example code
 
-​python def print_hi(name): print("hello", name) print_hi('Tom') ​
+​```
+HandlerThread handlerThread = new HandlerThread("ht");
+handlerThread.start();
+Looper looper = handlerThread.getLooper();
+Handler handler = new Handler(looper);
+context.registerReceiver(receiver, filter, null, handler);
+​```
 
-Check out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk.
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
