@@ -51,7 +51,6 @@ foreground application 과 사용자가 상호작용을 해야하는 경우(앱�
 
 실제로 서비스 내에 로직이 진행되는 부분은 onStartCommand() 부분이다. onStopService() 가 호출되면 후에 onDestroy() 가 자동 호출된다.
 
-<br>
 
 ![ex_screenshot](../images/startservice_and_bindservice.png)
 
