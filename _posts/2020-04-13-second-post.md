@@ -10,6 +10,7 @@ HandlerThread 는 UI와 관련없지만 단일스레드에서 순차적인 작�
 ####Example code
 
 {% highlight js  linenos %}
+
 HandlerThread handlerThread = new HandlerThread("ht");
 
 handlerThread.start();
@@ -19,6 +20,7 @@ Looper looper = handlerThread.getLooper();
 Handler handler = new Handler(looper);
 
 context.registerReceiver(receiver, filter, null, handler);
+
 {% endhighlight %}
 
 
