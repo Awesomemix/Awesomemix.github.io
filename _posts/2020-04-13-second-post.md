@@ -10,15 +10,11 @@ HandlerThread 는 UI와 관련없지만 단일스레드에서 순차적인 작�
 Example code
 
 ​```
-HandlerThread handlerThread = new HandlerThread("ht");
-handlerThread.start();
-Looper looper = handlerThread.getLooper();
-Handler handler = new Handler(looper);
-context.registerReceiver(receiver, filter, null, handler);
+HandlerThread handlerThread = new HandlerThread("ht");</br>
+handlerThread.start();</br>
+Looper looper = handlerThread.getLooper();</br>
+Handler handler = new Handler(looper);</br>
+context.registerReceiver(receiver, filter, null, handler);</br>
 ​```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
