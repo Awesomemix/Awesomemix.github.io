@@ -61,6 +61,27 @@ bindService() 의 경우 Activity 와 unbound() 진행 이후 onDestroy() 가 �
 
 <br>
 <br>
+
+### 4. 유의사항
+
+<hr>
+<br>
+
+앱 개발 중 background service 관련하여 안드로이드 버전 별 제약이 있을 수 있다. 실례로 broadcast receiver 의 경우 background 에 제약사항이 있으며, 특히 location 관련은 제약이 까다로워서 가급적이면 background에서 개발하지 않는 것이 좋다. 
+
+<br>
+
+![ex_screenshot](../images/background_limits.png)
+
+
+<br>
+
+![ex_screenshot](../images/background_limits_solutions.png)
+
+여기서 foreground service 로의 전환은 한 번은 무조건 일어나야 하는 것 같고, foreground 를 죽인 뒤 해당 서비스에서 부른 foreground service 를 AlarmManager 로 계속 깨우는 방식을 사용하는 것도 답이 될 수는 있겠다(확실
+
+<br>
+<br>
 <br>
 _the end_
 
