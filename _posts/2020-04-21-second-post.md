@@ -54,7 +54,27 @@ fun runTransaction() {
     }
 
 {% endhighlight %}
-데이터 중복을 막기 위하여 경로를 미리 지정해
+데이터 중복을 막기 위하여 경로를 미리 지정.
+
+<br>
+
+### 2. 이슈 사항
+
+<hr>
+<br>
+
+프로젝트 진행 중 다음과 같이 코드를 작성하였을 때 그 리턴값이 들어오지 않았다. 다음은 해당 코드의 예시이다.
+
+
+{% highlight java %}
+
+for(QueryDocumentSnapshot document : task.getResult()){
+//  TODO: test 시, 테스트 장소 내 비치된 wifi SSID 기입바람.
+    value = document.getData().get("field").toString();
+    value = "return_value";
+}
+
+{% endhighlight %}
 
 <br>
 
