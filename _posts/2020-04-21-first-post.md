@@ -56,7 +56,7 @@ foreground application 과 사용자가 상호작용을 해야하는 경우(앱�
 ![ex_screenshot](../images/startservice_and_bindservice.png)
 
 
-bindService() 의 경우 Activity 와 unbound() 
+bindService() 의 경우 Activity 와 unbound() 진행 이후 onDestroy() 가 호출된다.
 
 <br>
 <br>
