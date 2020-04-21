@@ -5,14 +5,18 @@ categories: jekyll update
 ---
 
 ### 1. 개요
-`<hr>`
+
+<hr>
+
 Service는 안드로이드 Application을 구성하는 4가지 컴포넌트 중에 하나이다. 
 안드로이드 공식 문서에서는 Service 를 사용자 인터페이스를 제공하지 않고 백그라운드에서 오래 실행되는 작업을 수행할 수 있는 애플리케이션 구성 요소
 설명하고 있는데, 이 부분이 가장 이해하면서 헷갈렸던 부분이다. Foreground service 는 사용자에게 보여지는 상태에서 작업이 수행되고 있지 않은가? 라고 생각이 들었기 때문이다.서
 
 
 ### 2. 구성 요소
-`<hr>`
+
+<hr>
+
 서비스는 foreground service, background service, bind service 로 나뉘어진다. 
 
 {% highlight markdown %}
@@ -30,7 +34,9 @@ foreground application 과 사용자가 상호작용을 해야하는 경우(앱�
 
 
 ### 3. 생명주기
-`<hr>`
+
+<hr>
+
 ![ex_screenshot](../images/android_service_lifecycle.png)
 
 실제로 서비스 내에 로직이 진행되는 부분은 onStartCommand() 부분이다. onStopService() 가 호출되면 후에 onDestroy() 가 자동 호출된다.
