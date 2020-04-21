@@ -15,15 +15,48 @@ categories: jekyll update
 <br>
 
 일반적으로 다음과 같이 불러서 사용한다.
+<br>
 
-{% highlight java %}
+#### 1) Document 임의 지정 방식
 
-collection(Collection 이름).document().
+{% highlight python %}
+
+collection(Collection 이름).document(Document 이름).
 set(입력할데이터).addOnCompleteListener{
 // TODO: Write your code here.
+// 이 때 Document 이름을 지정하지 않으면 임의로 생성.
 }
 
 {% endhighlight %}
+
+<br>
+
+#### 2) runTransaction 방식
+
+{% highlight python %}
+
+runTransaction {
+  transaction ->
+    var result = transaction.get(database_path).toObject(datamodel)
+    transaction.set(database_path, result)
+}
+
+fun runTransaction() {
+        var tsDoc = firestore?.collection("User")?.document(
+            "document1"
+        )
+
+        firestore?.runTransaction { transaction ->
+            val userDTO = transaction.get(tsDoc!!).toObject(UserDTO::class.java)
+            userDTO?.name - "ming"
+            transaction.set(tsDoc, userDTO!!)
+        }
+    }
+
+{% endhighlight %}
+데이터 중복을 막기 위하여 경로를 미리 지정해
+
+<br>
 
 <br>
 <br>
