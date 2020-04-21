@@ -69,7 +69,6 @@ fun runTransaction() {
 {% highlight java %}
 
 for(QueryDocumentSnapshot document : task.getResult()){
-//  TODO: test 시, 테스트 장소 내 비치된 wifi SSID 기입바람.
     value = document.getData().get("field").toString();
     value = "return_value";
 }
@@ -77,6 +76,14 @@ for(QueryDocumentSnapshot document : task.getResult()){
 {% endhighlight %}
 
 <br>
+다음과 같이 코드를 작성할 경우 해당하는 값이 조회되지 않았다. 오히려 내부에서 다음과 같이 for문을 돌리게 될 경우 정확하게 잘 돌아갔다. 왜 안됐는 지는 좀 더 코드분석이 필요한 듯.
+
+{% highlight java %}
+
+for (int i = 0; i < task.getResult().size(); i++)
+  task.getResult().getDocuments().get(i).get("field").toString()
+
+{% endhighlight %}
 
 <br>
 <br>
