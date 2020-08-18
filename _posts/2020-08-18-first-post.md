@@ -1,3 +1,10 @@
+---
+title: "LBS 프로젝트 개발 정리(Android)"
+date: 2020-08-18
+categories: jekyll update
+---
+
+
 ## LBS 프로젝트 개발 정리(Android) 
 
 ### 1. 전체로직
